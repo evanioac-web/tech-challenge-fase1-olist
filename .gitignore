@@ -1,0 +1,21 @@
+# Dados originais da Olist (baixar do Kaggle, ver README)
+data/
+*.csv
+!dados/kpis/*.csv
+
+# Saídas do notebook
+output/
+notebooks/output/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
