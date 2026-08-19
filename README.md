@@ -1,120 +1,132 @@
-# Olist E-commerce | Análise de Crescimento e Receita
+# Olist E-commerce | Crescimento, Receita e Concentração
 
-Análise exploratória e de indicadores comerciais sobre a base pública de e-commerce da Olist, com foco em
-evolução de receita, ticket médio e concentração de vendas por categoria, região e vendedor.
+Análise da base pública de e-commerce da Olist, voltada a quem precisa decidir se investe na empresa.
 
-Projeto individual do Tech Challenge da Fase 1, POSTECH Data Analytics.
+Tech Challenge Fase 1, POSTECH Data Analytics.
 
 **Autor:** Evanio Alves Carvalho
 
 ---
 
-## O que este projeto responde
+## A pergunta central
 
-A pergunta central é simples: **a Olist está crescendo, e esse crescimento é sustentável?**
+A Olist está crescendo, e esse crescimento é sustentável?
 
-Os principais achados:
+A resposta curta é que ela cresceu muito até o fim de 2017 e parou em 2018. O restante deste projeto é sobre
+o porquê disso e o que isso significa para uma decisão de investimento.
 
 | Indicador | Resultado |
 |---|---|
-| Receita no período | R$ 15,68 milhões (R$ 13,45 mi em produtos + R$ 2,23 mi em frete) |
+| Receita (jan/2017 a ago/2018) | R$ 15,68 milhões (R$ 13,45mi produto + R$ 2,23mi frete) |
 | Pedidos | 97.905 |
-| Crescimento jan/2017 a ago/2018 | ~628% |
-| Ticket médio (média / mediana) | R$ 160,19 / R$ 105,28 |
-| Concentração: top 5 categorias | 39,3% da receita (de 72 categorias) |
-| Concentração: top 5 estados | 73,1% da receita (SP sozinho: 37,4%) |
-| Concentração: top 10 vendedores | 12,9% da receita (de 3.029 ativos) |
+| Crescimento no período | cerca de 628% |
+| Valor do pedido (média / mediana) | R$ 160,19 / R$ 105,28 |
+| Concentração: São Paulo | 37,4% da receita |
+| Concentração: top 5 estados | 73,1% (sobram 26,9% para os outros 22) |
+| Concentração: top 5 categorias | 39,3% de 72 categorias |
+| Concentração: top 10 vendedores | 12,9% de 3.029 |
+| Projeção do trimestre seguinte | cerca de R$ 1 milhão por mês |
 
-**A conclusão não é o número de crescimento.** É o que vem depois dele: a receita cresce forte até o começo de
-2018 e então estaciona. A média mensal do segundo quadrimestre de 2018 é 4,3% menor que a do primeiro. O maior
-mês de toda a série é novembro de 2017, puxado pela Black Friday, e não um mês de 2018.
+## Os três achados que importam
 
-Junte a isso a concentração geográfica, com quase 40% da receita vindo de um único estado, e o quadro é de um
-negócio que ganhou escala rápido e precisa encontrar novas fontes de crescimento.
+**O número de 628% descreve 2017, não 2018.** A receita sobe forte no primeiro ano e depois estaciona. A média
+mensal do segundo quadrimestre de 2018 é 4,3% menor que a do primeiro. A projeção confirma: a melhor
+estimativa para os meses seguintes é repetir os últimos.
+
+**O que travou foi a demanda, não a oferta.** Em 2018 os vendedores ativos cresceram 31%, de 968 para 1.266, e
+a receita não subiu. Os clientes caíram 10% e a receita por vendedor encolheu 31%, de R$ 1.138 para R$ 788. A
+plataforma continuou atraindo quem vende sem atrair quem compra.
+
+**A entrega explica parte da concentração geográfica.** Os cinco estados que fazem 73% da receita recebem em 8
+a 15 dias. Os que quase não vendem esperam de 21 a 29 dias e ainda pagam quase o dobro de frete em proporção
+ao produto. A correlação entre tempo de entrega e participação na receita é -0,60.
 
 ---
 
 ## Estrutura do repositório
 
 ```
-notebooks/    análise completa em Python (CRISP-DM), do carregamento à conclusão
-relatorios/   relatório executivo (.docx) e apresentação (.pptx)
-dados/kpis/   indicadores calculados, exportados em CSV
-imagens/      gráficos gerados pelo notebook
+data/
+  raw/        CSVs originais da Olist, não versionados (ver "Como reproduzir")
+  kpis/       indicadores calculados, exportados em CSV
+notebooks/
+  01_limpeza_e_preparacao.ipynb    base comum, sem filtros de análise
+  02_crescimento_e_receita.ipynb   evolução, platô e projeção
+  03_concentracao_e_entrega.ipynb  por que a receita está presa a São Paulo
+reports/      achados em markdown, relatório executivo e apresentação
+figures/      gráficos gerados pelos notebooks
 ```
 
-Os 9 CSVs originais da Olist **não estão versionados** neste repositório, por serem dados de terceiros e
-somarem mais de 120 MB. A seção "Como reproduzir" explica onde baixá-los.
+Os notebooks rodam na ordem numerada. O `01` grava em `data/processed/`, que não é versionado por tamanho, e
+os outros dois leem de lá. Rodar o `02` ou o `03` sem ter rodado o `01` não funciona.
+
+### Por que a limpeza fica separada
+
+O `01` não aplica nenhum filtro de análise: não corta período e não remove status de pedido. Isso é
+proposital. Quem analisa receita não quer pedido cancelado, mas quem analisa cancelamento quer justamente
+ele. Filtrar na base comum inviabilizaria outras análises.
+
+Cada notebook de análise aplica o próprio recorte e justifica ali mesmo.
 
 ---
 
 ## Decisões de tratamento de dados
 
-Estas são as escolhas que mais afetam os números finais. Todas estão justificadas com evidência dentro do
-notebook, não apenas afirmadas.
+Todas estão justificadas com evidência dentro dos notebooks, não apenas afirmadas.
 
-**Receita = preço do produto + frete.** As duas parcelas somadas representam o valor transacionado em cada
-item.
+**Receita = preço do produto + frete**, no grão de item. É o valor transacionado, não o que a Olist ganha.
 
-**Exclusão dos status `canceled` e `unavailable`.** Não foi uma escolha por intuição. A checagem mostrou que
-0% dos pedidos `unavailable` e apenas 77,2% dos `canceled` têm produto associado, ou seja, a venda não se
-concretizou. Já `shipped`, `processing` e `invoiced` têm pagamento e produto associados em 100% dos casos, e
-por isso foram mantidos.
+**Atraso é comparado apenas pela data, ignorando a hora.** A data prometida vem sem hora na base, sempre
+meia-noite, e a data real vem com hora cheia. Comparar as duas direto marca como atrasado um pedido entregue
+no dia certo às 15h. São 1.292 pedidos, e isso muda o atraso da base de 6,8% para 8,1%.
+
+**Exclusão dos status `canceled` e `unavailable`** nas análises de receita. A checagem mostrou que 0% dos
+`unavailable` e apenas 77,2% dos `canceled` têm produto associado, ou seja, a venda não se concretizou. Os
+demais status têm 100% e foram mantidos.
 
 **Janela de janeiro de 2017 a agosto de 2018.** A base vai de setembro de 2016 a outubro de 2018, mas as
-pontas são resíduo: setembro de 2016 tem 4 pedidos, dezembro de 2016 tem 1, novembro de 2016 nem existe na
-base, e outubro de 2018 tem 4.
+pontas são resíduo de operação. O efeito de escolher outro mês como base de cálculo:
 
-O efeito de escolher um desses meses como base de cálculo:
-
-| Mês tomado como base | Volume do mês | Crescimento até ago/2018 |
+| Mês tomado como base | Pedidos no mês | Crescimento até ago/2018 |
 |---|---|---|
-| set/2016 | 2 pedidos | 356.357% |
-| dez/2016 | 1 pedido | 5.081.314% |
-| out/2016 | 290 pedidos | 1.841% |
-| **jan/2017** | **787 pedidos** | **628%** |
+| set/2016 | 4 | 356.357% |
+| dez/2016 | 1 | 5.081.314% |
+| out/2016 | 324 | 1.841% |
+| **jan/2017** | **800** | **628%** |
 
-Os três primeiros não descrevem o desempenho da empresa, descrevem o fato de que a plataforma estava
-começando. E a ausência de novembro de 2016 abre um vão que impede o cálculo contínuo de variação mês a mês.
+Nenhum dado foi removido da base: a série completa é calculada e plotada, para que a decisão possa ser
+conferida em vez de aceita.
 
-Nenhum dado foi removido: a série completa é calculada, aparece no notebook e é plotada com o período
-analisado destacado, justamente para que essa decisão possa ser verificada por quem lê em vez de ter que ser
-aceita como afirmação.
+**`payments` e `reviews` agregados por pedido antes dos merges.** As duas tabelas têm mais de uma linha por
+pedido. Sem agregar antes, cada item viraria várias linhas e a receita contaria em dobro.
 
-**Nulos mantidos, com justificativa por coluna.** Três tabelas têm nulos, mas nenhum deles cai em coluna usada
-no cálculo: em `orders` são datas de entrega, em `reviews` são campos de comentário opcionais, e em `products`
-são dimensões físicas. A única exceção tratada é `product_category_name`, preenchida como `unknown`.
+**Outliers de preço mantidos.** O IQR aponta 7,5% dos itens acima de R$ 277, chegando a R$ 6.735. São valores
+plausíveis para móvel e eletrônico, e não há preço negativo nem zerado. Remover cortaria justamente as vendas
+maiores. A assimetria é tratada reportando mediana junto com a média.
 
-**Tabela `geolocation` removida do escopo.** Ela tem 261.831 linhas duplicadas, o que é esperado por listar
-coordenadas por prefixo de CEP. Como a análise usa a UF do cliente, que já vem em `customers`, a tabela não
-entra em nenhum cálculo e foi retirada em vez de tratada.
+**Recompra medida por `customer_unique_id`**, não por `customer_id`, que é gerado a cada pedido. Medir pelo
+`customer_id` daria recompra zero.
 
-**Outliers de preço mantidos.** O método do IQR aponta 7,5% dos itens acima de R$ 277, chegando a R$ 6.735.
-São valores altos mas plausíveis para eletrônicos e móveis, e não há sinal de erro de digitação: zero preços
-negativos, zerados ou absurdos. Remover 7,5% da base cortaria justamente as vendas de maior valor e
-subestimaria a receita. A assimetria que eles causam é tratada reportando **mediana junto com a média**.
+**Tabela `geolocation` fora do escopo.** Tem muita linha repetida por listar coordenadas por prefixo de CEP, e
+as análises usam a UF do cliente, que já vem em `customers`.
 
 ---
 
 ## Modelagem
 
-Os dados foram organizados em um **star schema**, com a tabela fato no grão de item de pedido:
+Modelo estrela com a tabela fato no grão de item de pedido:
 
 ```
-fact_order_items  (grão: item do pedido)
-  ├── dim_customers
-  ├── dim_products
-  ├── dim_sellers
-  └── dim_date
+fato_itens  (grão: item do pedido)
+  ├── dim_clientes
+  ├── dim_produtos
+  ├── dim_vendedores
+  └── dim_data
 ```
-
-`payments` e `reviews` têm mais de uma linha por pedido, então foram agregadas por `order_id` **antes** dos
-merges (soma para pagamento, média para avaliação). Sem esse cuidado, cada item viraria várias linhas e a
-receita ficaria inflada.
 
 A tabela fato é validada logo depois de construída: o número de linhas tem que continuar igual ao de
-`order_items` (112.650), a soma de `price` tem que bater com a origem, e nenhuma chave pode ficar sem
-correspondência. As três checagens passam.
+`order_items` (112.650), a soma de `price` tem que bater com a origem e nenhuma chave pode ficar órfã. As três
+checagens passam. Se alguma falhar, há duplicação em algum merge.
 
 ---
 
@@ -122,30 +134,36 @@ correspondência. As três checagens passam.
 
 1. Baixe o [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
    no Kaggle
-2. Coloque os 9 arquivos CSV em uma pasta `data/` na raiz do projeto
-3. Instale as dependências:
+2. Coloque os 9 arquivos CSV em `data/raw/`
+3. Crie o ambiente e instale as dependências:
+
    ```bash
+   python -m venv .venv
+   source .venv/bin/activate      # Windows: .venv\Scripts\activate
    pip install -r requirements.txt
    ```
-4. Execute o notebook `notebooks/analise_crescimento_receita.ipynb`
 
-O notebook também roda no Google Colab: ele detecta o ambiente e monta o Google Drive automaticamente,
-esperando os CSVs em uma pasta `Tech_Challenge_Fase-1`.
+4. Rode os notebooks de `notebooks/` na ordem numerada
 
-Todos os números do relatório executivo saem deste notebook. Cada percentual citado tem uma célula
+Todos os números do relatório executivo saem destes notebooks. Cada percentual citado tem uma célula
 correspondente que o calcula.
 
 ---
 
 ## Limitações
 
-A base pública da Olist **não informa a comissão** que a plataforma retém sobre cada venda, nem o custo de
-aquisição de clientes. Por isso o que este projeto chama de receita é o valor transacionado, e não é possível
-calcular margem, lucro ou retorno de investimento em marketing a partir destes dados. As conclusões se limitam
-ao comportamento transacional: receita, volume e concentração.
+A base não informa a comissão que a Olist retém sobre cada venda, nem o custo de aquisição de clientes. Por
+isso o que este projeto chama de receita é o valor transacionado, e não é possível calcular margem, lucro ou
+retorno de investimento em marketing. As conclusões se limitam a receita, volume e concentração.
+
+A relação entre tempo de entrega e receita por estado é correlação, não prova de causa. São Paulo também
+concentra população e renda, e isso explica parte da diferença.
+
+O efeito do atraso sobre a recompra é estatisticamente significativo (p = 0,007) mas pequeno em termos
+absolutos: 0,92 ponto percentual. Mesmo com entrega no prazo, cerca de 96% dos clientes não voltam.
 
 ---
 
 ## Tecnologias
 
-Python, pandas, matplotlib, seaborn, Jupyter.
+Python, pandas, matplotlib, seaborn, scipy, Jupyter.

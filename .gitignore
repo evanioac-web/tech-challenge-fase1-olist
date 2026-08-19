@@ -1,11 +1,12 @@
 # Dados originais da Olist (baixar do Kaggle, ver README)
-data/
-*.csv
-!dados/kpis/*.csv
+data/raw/*
+!data/raw/.gitkeep
 
-# Saídas do notebook
+# Base tratada gerada pelo notebook 01 (grande demais para versionar)
+data/processed/
+
+# Saídas temporárias dos notebooks
 output/
-notebooks/output/
 
 # Python
 __pycache__/
