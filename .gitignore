@@ -2,8 +2,9 @@
 data/raw/*
 !data/raw/.gitkeep
 
-# Base tratada gerada pelo notebook 01 (grande demais para versionar)
-data/processed/
+# Base tratada, gerada pelo notebook 01
+data/processed/*
+!data/processed/.gitkeep
 
 # Saídas temporárias dos notebooks
 output/

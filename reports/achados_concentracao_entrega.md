@@ -1,25 +1,21 @@
 # Concentração e Entrega
 
-Notebook: `03_concentracao_e_entrega.ipynb`
-Autor: Evanio Alves Carvalho
+Notebook: `03_concentracao_entrega.ipynb`
 
-Este notebook parte de duas perguntas que o `02` deixou em aberto: por que a receita está presa a São Paulo, e
-por que o cliente parou de vir em 2018.
+Responde à pergunta deixada pelo `02`: por que a receita está presa a poucos estados, e isso tem relação com
+o cliente ter parado de vir.
 
-## Como o atraso é medido
+## Critério de atraso
 
-A data prometida vem sem hora na base, sempre meia-noite. A data real vem com hora cheia. Comparar as duas
-direto conta como atrasado um pedido entregue no dia certo às 15h. São 1.292 pedidos, e isso sozinho muda o
-atraso de 6,8% para 8,1%.
+A data prometida vem sem hora na base e a data real vem com hora cheia. Comparar as duas diretamente
+classifica como atrasado um pedido entregue no dia certo às 15h, o que afeta 1.292 registros e move o atraso
+de 6,8% para 8,1%. Adotada a comparação apenas por data.
 
-Critério adotado no projeto: **atraso é comparado apenas pela data, ignorando a hora.** A coluna já vem
-pronta do notebook 01.
+## Métricas
 
-## Métricas principais
-
-- Atraso na janela analisada: 6,79% dos pedidos entregues
-- Top 5 estados: 73,1% da receita, entrega média de 10,5 dias
-- Outros 22 estados: 26,9% da receita, entrega média de 17,3 dias
+- Atraso no período: 6,79% dos pedidos entregues
+- Top 5 estados: 73,1% da receita, entrega em 10,5 dias
+- Outros 22 estados: 26,9% da receita, entrega em 17,3 dias
 - Correlação entre dias de entrega e participação na receita: -0,60
 
 | Estado | % receita | Dias até entregar | % atraso | Frete sobre produto |
@@ -33,49 +29,41 @@ pronta do notebook 01.
 
 ## Achados
 
-1. **A entrega explica parte da concentração, mas não tudo.** Os cinco estados que fazem 73% da receita
-   recebem em 8 a 15 dias. Os que quase não vendem esperam de 21 a 29 dias. A correlação entre tempo de
-   entrega e participação na receita é -0,60. Não dá para afirmar causa, porque SP também concentra população
-   e renda, mas a entrega é a parte do problema que a empresa consegue mudar.
+1. **A entrega explica parte da concentração.** Os estados que concentram receita recebem em 10,5 dias, os
+   demais em 17,3. Correlação de -0,60. É correlação e não prova de causa, já que SP concentra população e
+   renda, mas é a parcela do problema que a empresa controla.
 
-2. **Não é só o tempo, é o custo.** Em SP o frete é 13,8% do valor do produto. No Maranhão e em Roraima passa
-   de 26%, quase o dobro. Comprar fora do Sudeste é mais caro e mais demorado ao mesmo tempo.
+2. **Não é só o tempo, é o custo.** O frete equivale a 13,8% do valor do produto em SP e ultrapassa 26% no
+   Maranhão e em Roraima. Fora do Sudeste, comprar demora quase o dobro e custa quase o dobro de frete.
 
-3. **Atrasar e demorar são coisas diferentes.** Alagoas entrega em 24 dias e atrasa 21,5% das vezes. Roraima
-   demora mais, 29,5 dias, e atrasa 12,5%. Amapá demora 26,7 dias e atrasa só 3%. Onde o atraso é alto sem
-   que o tempo seja o pior, o problema é o prazo prometido estar mal calibrado, o que é bem mais barato de
-   corrigir do que a operação.
+3. **Atrasar não é demorar.** Alagoas atrasa 21,5% entregando em 24 dias, enquanto Roraima atrasa 12,5%
+   entregando em 29,5. Onde o atraso é alto sem que o tempo seja o pior, o problema está no prazo prometido,
+   cuja correção é mais rápida e barata que mudar a operação.
 
-4. **O atraso reduz a recompra, mas pouco.** Entre clientes cuja primeira compra foi entregue no prazo, 4,08%
-   voltaram a comprar. Entre os que tiveram atraso, 3,16%. Queda de 22,6% em termos relativos, com p-valor de
-   0,007, então não é acaso. Mas a diferença absoluta é de 0,92 ponto percentual.
+4. **O atraso reduz a recompra, mas pouco.** Clientes atendidos no prazo voltam em 4,08% dos casos, contra
+   3,16% dos que sofreram atraso. Queda de 22,6% em termos relativos, com p-valor de 0,007. A diferença
+   absoluta, porém, é de 0,92 ponto percentual.
 
 ## O cuidado que o achado 4 exige
 
-Mesmo entregando tudo no prazo, cerca de 96% dos clientes não voltam. O atraso agrava um problema que já é
-grave por outro motivo.
+Mesmo com entrega pontual, cerca de 96% dos clientes não retornam. O atraso agrava um problema de retenção
+preexistente.
 
-Isso importa para não superestimar perda de receita. Estimativas que multiplicam o número de clientes
-insatisfeitos pelo ticket médio cheio assumem que todos teriam voltado, o que os dados não sustentam. O
-cálculo honesto usa a diferença entre os dois grupos, 0,92 ponto percentual, e não o valor integral.
-
-## Ligação com o notebook 02
-
-A receita parou de crescer porque faltou cliente, e o cliente é mais difícil de conquistar exatamente onde
-entregar é caro e lento. Melhorar logística regional ataca as duas coisas ao mesmo tempo.
-
-Mas como o atraso explica menos de 1 ponto percentual da recompra, resolver só a entrega não vai criar uma
-base fiel. A retenção precisa ser atacada por outro caminho.
+Isso invalida estimativas de perda que multiplicam clientes insatisfeitos pelo ticket médio integral, porque
+elas pressupõem que todos retornariam. A conta correta usa a diferença entre os dois grupos.
 
 ## Decisões de dados
 
-- Receita usa o mesmo recorte do notebook 02: jan/2017 a ago/2018, sem `canceled` e `unavailable`.
-- Métricas de entrega usam apenas pedidos com status `delivered` e data de entrega preenchida, porque pedido
-  que não chegou não tem tempo mensurável.
-- A análise de recompra limita a primeira compra a antes de março de 2018, garantindo pelo menos seis meses de
-  janela para o cliente voltar. Sem esse corte, quem comprou em agosto de 2018 puxaria a recompra para baixo
-  sem motivo.
-- Recompra medida por `customer_unique_id`, não por `customer_id`, que muda a cada pedido.
-- Frete sobre produto calculado pelo método agregado (soma do frete dividida pela soma dos produtos). O método
-  alternativo, média das razões item a item, resulta em 47% a 59% para os mesmos estados, porque item barato
-  com frete fixo gera razão muito alta e pesa igual a uma venda grande.
+- Receita usa o mesmo recorte do `02`.
+- Métricas de entrega usam apenas pedidos com status `delivered` e data de entrega preenchida.
+- A análise de recompra limita a primeira compra a antes de março de 2018, garantindo seis meses de janela.
+- Recompra medida por `customer_unique_id`, que identifica a pessoa, e não por `customer_id`, que muda a cada
+  pedido.
+- Frete sobre produto pelo método agregado. A média das razões item a item resultaria em 47% a 59% nos mesmos
+  estados, porque itens baratos com frete fixo geram razões muito altas e pesam igual a vendas grandes.
+
+## Fechando com o notebook 02
+
+O crescimento parou por falta de clientes, e conquistar cliente é mais difícil onde entregar é lento e caro.
+Logística regional ataca os dois problemas. Mas como o atraso explica menos de um ponto percentual da
+recompra, a retenção precisa de uma frente própria.
