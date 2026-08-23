@@ -1,10 +1,12 @@
-# Dados originais da Olist (baixar do Kaggle, ver README)
+# Dados originais da Olist (baixar do Kaggle, ver data/raw/README.md)
 data/raw/*
 !data/raw/.gitkeep
+!data/raw/README.md
 
 # Base tratada, gerada pelo notebook 01
 data/processed/*
 !data/processed/.gitkeep
+!data/processed/README.md
 
 # Saídas temporárias dos notebooks
 output/
