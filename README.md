@@ -4,6 +4,22 @@ Relatório executivo para investidores, baseado no Brazilian E-Commerce Public D
 
 POSTECH Data Analytics
 
+## Integrantes
+
+- Eduardo Zancanaro Vilela
+- Evanio Alves Carvalho
+- Marcela Morillas de Souza
+- Mateus Araujo
+
+## Entregáveis
+
+| Item | Onde encontrar |
+|---|---|
+| Repositório com os códigos | este repositório |
+| Relatório executivo | [`reports/relatorio_executivo_olist.docx`](reports/relatorio_executivo_olist.docx) |
+| Apresentação executiva | [`reports/apresentacao_crescimento_receita.pptx`](reports/apresentacao_crescimento_receita.pptx) |
+| Vídeo executivo (até 5 min) | _link a incluir_ |
+
 ---
 
 ## A pergunta
@@ -51,7 +67,7 @@ notebooks/
   01_limpeza.ipynb              preparação da base, sem filtros de análise
   02_receita.ipynb              crescimento, causa do platô e projeção
   03_concentracao_entrega.ipynb concentração geográfica e efeito da entrega
-reports/       achados em markdown, relatório executivo e roteiro do vídeo
+reports/       achados em markdown, relatório executivo e apresentação
 figures/       gráficos gerados pelos notebooks
 ```
 
