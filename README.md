@@ -146,7 +146,8 @@ deve coincidir com a origem e nenhuma chave pode ficar órfã. As três verifica
    pip install -r requirements.txt
    ```
 
-4. Execute os notebooks de `notebooks/` na ordem numerada
+4. Abra os notebooks de `notebooks/` e execute na ordem numerada. Eles leem e escrevem com caminhos
+   relativos à própria pasta, então funcionam abrindo direto pelo Jupyter
 
 Cada percentual citado no relatório tem uma célula correspondente que o calcula.
 
