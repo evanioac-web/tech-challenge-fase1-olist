@@ -24,17 +24,17 @@ os status `canceled` e `unavailable`. As métricas de entrega usam adicionalment
 
 | Arquivo | Gerado em | Como | Sustenta no relatório |
 |---|---|---|---|
-| `kpi_evolucao_mensal.csv` | 02, célula 35 | receita e pedidos agrupados por mês | crescimento de 628% e a queda de 4,3% no 2º quadrimestre de 2018 |
-| `kpi_serie_completa.csv` | 02 | receita por mês em toda a base, sem recorte | justificativa de excluir 2016 |
-| `kpi_novembro_diario.csv` | 02, célula 35 | pedidos únicos por dia em novembro de 2017 | os 1.166 pedidos do dia 24 contra média de 191 |
-| `kpi_vendedores_clientes.csv` | 02, célula 35 | contagem de vendedores e clientes distintos por mês | vendedores +30,8%, clientes -10,0%, receita por vendedor -30,8% |
-| `kpi_receita_categoria.csv` | 02, célula 27 | soma de receita por categoria | 72 categorias, top 5 com 39,3% |
-| `kpi_receita_estado.csv` | 02, célula 27 | soma de receita e pedidos por UF do cliente | SP com 37,4%, top 5 com 73,1% |
-| `kpi_top_sellers.csv` | 02, célula 27 | soma de receita por vendedor | 3.029 vendedores, top 10 com 12,9% |
-| `kpi_previsao.csv` | 02, célula 33 | média dos últimos 3 meses replicada | projeção de cerca de R$ 1 milhão por mês |
-| `kpi_entrega_estado.csv` | 03, célula 5 | receita, dias médios de entrega e % de atraso por UF | 10,5 dias no top 5 contra 17,3 nos demais, correlação -0,60 |
-| `kpi_frete_estado.csv` | 03, célula 15 | frete e produto somados por UF, nos dois métodos | frete de 13,8% em SP contra mais de 26% em MA e RR |
-| `kpi_recompra_atraso.csv` | 03, célula 21 | recompra agrupada por atraso na primeira compra | 4,08% no prazo contra 3,16% com atraso |
+| `kpi_evolucao_mensal.csv` | notebook 02, variável `por_mes` | receita e pedidos agrupados por mês | crescimento de 628% e a queda de 4,3% no 2º quadrimestre de 2018 |
+| `kpi_serie_completa.csv` | notebook 02, variável `todos_meses` | receita por mês em toda a base, sem recorte | justificativa de excluir 2016 |
+| `kpi_novembro_diario.csv` | notebook 02, variável `nov_por_dia` | pedidos únicos por dia em novembro de 2017 | os 1.166 pedidos do dia 24 contra média de 191 |
+| `kpi_vendedores_clientes.csv` | notebook 02, variável `por_mes_detalhe` | contagem de vendedores e clientes distintos por mês | vendedores +30,8%, clientes -10,0%, receita por vendedor -30,8% |
+| `kpi_receita_categoria.csv` | notebook 02, variável `por_categoria` | soma de receita por categoria | 72 categorias, top 5 com 39,3% |
+| `kpi_receita_estado.csv` | notebook 02, variável `por_estado` | soma de receita e pedidos por UF do cliente | SP com 37,4%, top 5 com 73,1% |
+| `kpi_top_sellers.csv` | notebook 02, variável `por_vendedor` | soma de receita por vendedor | 3.029 vendedores, top 10 com 12,9% |
+| `kpi_previsao.csv` | notebook 02, variável `previsao` | média dos últimos 3 meses replicada | projeção de cerca de R$ 1 milhão por mês |
+| `kpi_entrega_estado.csv` | notebook 03, variável `uf` | receita, dias médios de entrega e % de atraso por UF | 10,5 dias no top 5 contra 17,3 nos demais, correlação -0,60 |
+| `kpi_frete_estado.csv` | notebook 03, variável `frete_uf` | frete e produto somados por UF, nos dois métodos | frete de 13,8% em SP contra mais de 26% em MA e RR |
+| `kpi_recompra_atraso.csv` | notebook 03, variável `comparacao` | recompra agrupada por atraso na primeira compra | 4,08% no prazo contra 3,16% com atraso |
 
 ## Uma observação sobre a projeção
 
