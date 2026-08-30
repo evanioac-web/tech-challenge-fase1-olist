@@ -28,7 +28,7 @@ As pontas da base distorcem qualquer cálculo de crescimento. O efeito de escolh
    mensal do segundo quadrimestre de 2018 é 4,3% menor que a do primeiro.
 
 2. **O limite está na demanda.** Em 2018 os vendedores ativos cresceram 30,8% (968 para 1.266), os clientes
-   caíram 10,0% (7.088 para 6.380) e a receita por vendedor recuou 30,8% (R$ 1.138 para R$ 788). Ampliar a
+   caíram 10,0% (7.088 para 6.380) e a receita por vendedor recuou 30,8% (R$ 1.138 para R$ 787). Ampliar a
    oferta antes de resolver a demanda deteriora o resultado de quem já opera na plataforma.
 
 3. **O crescimento veio de volume, não de valor.** O ticket permaneceu estável no período inteiro.

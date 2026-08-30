@@ -51,7 +51,7 @@ dias, os outros 22 esperam 17,3 dias e pagam quase o dobro de frete em proporç�
 | Cinco maiores estados | 73,1% |
 | Vendedores ativos em 2018 | 968 para 1.266 (+30,8%) |
 | Clientes em 2018 | 7.088 para 6.380 (-10,0%) |
-| Receita por vendedor em 2018 | R$ 1.138 para R$ 788 (-30,8%) |
+| Receita por vendedor em 2018 | R$ 1.138 para R$ 787 (-30,8%) |
 | Projeção do trimestre seguinte | cerca de R$ 1 milhão por mês |
 
 ---
