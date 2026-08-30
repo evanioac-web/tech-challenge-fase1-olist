@@ -34,7 +34,7 @@ As pontas da base distorcem qualquer cálculo de crescimento. O efeito de escolh
 3. **O crescimento veio de volume, não de valor.** O ticket permaneceu estável no período inteiro.
 
 4. **O maior mês da série é sazonalidade.** Novembro de 2017 supera todos os meses de 2018 por causa de um
-   único dia: 24/11 registrou 1.166 pedidos contra média de 191 nos demais dias, seis vezes o volume normal.
+   único dia: 24/11 registrou 1.166 pedidos contra média de 191 nos dias fora do fim de semana promocional, seis vezes o volume normal.
 
 5. **O risco é geográfico.** Categoria e vendedor estão diversificados. Estado não.
 

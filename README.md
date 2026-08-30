@@ -9,7 +9,7 @@ POSTECH Data Analytics
 - Eduardo Zancanaro Vilela
 - Evanio Alves Carvalho
 - Marcela Morillas de Souza
-- Mateus Araujo
+- Mateus Araújo
 
 ## Entregáveis
 
