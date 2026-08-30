@@ -13,12 +13,15 @@ POSTECH Data Analytics
 
 ## Entregáveis
 
-| Item | Onde encontrar |
-|---|---|
-| Repositório com os códigos | este repositório |
-| Relatório executivo | [`reports/relatorio_executivo_olist.docx`](reports/relatorio_executivo_olist.docx) |
-| Apresentação executiva | [`reports/apresentacao_crescimento_receita.pptx`](reports/apresentacao_crescimento_receita.pptx) |
-| Vídeo executivo (até 5 min) | _link a incluir_ |
+| Item | Arquivo | Leitura direta |
+|---|---|---|
+| Repositório com os códigos | este repositório | |
+| Relatório executivo | [`.docx`](reports/relatorio_executivo_olist.docx) | [ler em PDF](reports/relatorio_executivo_olist.pdf) |
+| Apresentação executiva | [`.pptx`](reports/apresentacao_crescimento_receita.pptx) | [ler em PDF](reports/apresentacao_crescimento_receita.pdf) |
+| Vídeo executivo (até 5 min) | _link a incluir_ | |
+
+Os PDFs são cópias dos arquivos ao lado, geradas sem edição, para abrir direto no navegador. O GitHub não
+exibe `.docx` nem `.pptx`.
 
 ---
 
@@ -67,7 +70,7 @@ notebooks/
   01_limpeza.ipynb              preparação da base, sem filtros de análise
   02_receita.ipynb              crescimento, causa do platô e projeção
   03_concentracao_entrega.ipynb concentração geográfica e efeito da entrega
-reports/       achados em markdown, relatório executivo e apresentação
+reports/       achados em markdown, relatório executivo e apresentação, em formato editável e em PDF
 figures/       gráficos gerados pelos notebooks
 ```
 
