@@ -69,6 +69,7 @@ notebooks/
   03_concentracao_entrega.ipynb concentração geográfica e efeito da entrega
 reports/       achados em markdown, relatório executivo e apresentação
 figures/       gráficos gerados pelos notebooks
+verificacao_numeros.py  confere os números do relatório contra a base original
 ```
 
 Os notebooks rodam na ordem numerada. O `01` grava em `data/processed/`, de onde os outros leem.
@@ -94,8 +95,8 @@ plataforma.
 setembro de 2016 o crescimento daria 356.357%, de dezembro de 2016 daria 5.081.314%. Janeiro de 2017 é o
 primeiro mês com volume constante.
 
-**Exclusão de `canceled` e `unavailable` nas análises de receita.** Nenhum pedido `unavailable` tem produto
-associado e apenas 77,2% dos `canceled` têm, contra 100% dos demais status.
+**Exclusão de `canceled` e `unavailable` nas análises de receita.** Apenas 1,0% dos pedidos `unavailable` tem
+produto associado e 73,8% dos `canceled` têm, contra 99% ou mais nos demais status.
 
 **Atraso comparado apenas pela data.** A data prometida vem sem hora e a data real vem com hora cheia.
 Comparar diretamente classifica como atrasado um pedido entregue no dia certo às 15h, o que afeta 1.292
@@ -148,6 +149,10 @@ deve coincidir com a origem e nenhuma chave pode ficar órfã. As três verifica
 4. Execute os notebooks de `notebooks/` na ordem numerada
 
 Cada percentual citado no relatório tem uma célula correspondente que o calcula.
+
+Para conferir tudo de uma vez, sem passar pelos notebooks, rode `python verificacao_numeros.py` na raiz do
+projeto. O script recalcula as 73 afirmações numéricas do relatório direto dos CSVs originais e aponta
+qualquer divergência.
 
 ---
 

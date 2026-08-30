@@ -28,13 +28,20 @@ os status `canceled` e `unavailable`. As métricas de entrega usam adicionalment
 | `kpi_serie_completa.csv` | notebook 02, variável `todos_meses` | receita por mês em toda a base, sem recorte | justificativa de excluir 2016 |
 | `kpi_novembro_diario.csv` | notebook 02, variável `nov_por_dia` | pedidos únicos por dia em novembro de 2017 | os 1.166 pedidos do dia 24 contra média de 191 |
 | `kpi_vendedores_clientes.csv` | notebook 02, variável `por_mes_detalhe` | contagem de vendedores e clientes distintos por mês | vendedores +30,8%, clientes -10,0%, receita por vendedor -30,8% |
-| `kpi_receita_categoria.csv` | notebook 02, variável `por_categoria` | soma de receita por categoria | 72 categorias, top 5 com 39,3% |
+| `kpi_receita_categoria.csv` | notebook 02, variável `por_categoria` | soma de receita por categoria | 73 categorias, top 5 com 39,3% |
 | `kpi_receita_estado.csv` | notebook 02, variável `por_estado` | soma de receita e pedidos por UF do cliente | SP com 37,4%, top 5 com 73,1% |
 | `kpi_top_sellers.csv` | notebook 02, variável `por_vendedor` | soma de receita por vendedor | 3.029 vendedores, top 10 com 12,9% |
 | `kpi_previsao.csv` | notebook 02, variável `previsao` | média dos últimos 3 meses replicada | projeção de cerca de R$ 1 milhão por mês |
 | `kpi_entrega_estado.csv` | notebook 03, variável `uf` | receita, dias médios de entrega e % de atraso por UF | 10,5 dias no top 5 contra 17,3 nos demais, correlação -0,60 |
 | `kpi_frete_estado.csv` | notebook 03, variável `frete_uf` | frete e produto somados por UF, nos dois métodos | frete de 13,8% em SP contra mais de 26% em MA e RR |
 | `kpi_recompra_atraso.csv` | notebook 03, variável `comparacao` | recompra agrupada por atraso na primeira compra | 4,08% no prazo contra 3,16% com atraso |
+
+## Sobre o arquivo de categorias
+
+O `kpi_receita_categoria.csv` soma R$ 15,48 milhões, e não os R$ 15,68 milhões do período. A diferença de
+R$ 206 mil, equivalente a 1,3% da receita, vem de 1.587 itens cujo produto não tem categoria preenchida na
+base original. Esses itens entram na receita total, mas não podem ser atribuídos a nenhuma categoria. Os
+39,3% das cinco maiores são calculados sobre a receita total do período, não sobre a soma desta planilha.
 
 ## Uma observação sobre a projeção
 
