@@ -105,7 +105,7 @@ registros e move o atraso de 6,8% para 8,1%.
 **`payments` e `reviews` agregados por pedido antes dos merges.** Ambas têm mais de uma linha por pedido, e
 sem agregar a receita contaria em dobro.
 
-**Outliers de preço mantidos.** O IQR aponta 7,5% dos itens acima de R$ 277, com máximo de R$ 6.735, valores
+**Outliers de preço mantidos.** O IQR aponta 7,4% dos itens acima de R$ 277, com máximo de R$ 6.735, valores
 plausíveis para móvel e eletrônico. Não há preço negativo nem zerado. A assimetria é tratada reportando
 mediana junto com média.
 
