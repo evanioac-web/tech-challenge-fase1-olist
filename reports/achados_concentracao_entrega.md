@@ -59,8 +59,8 @@ elas pressupõem que todos retornariam. A conta correta usa a diferença entre o
 - A análise de recompra limita a primeira compra a antes de março de 2018, garantindo seis meses de janela.
 - Recompra medida por `customer_unique_id`, que identifica a pessoa, e não por `customer_id`, que muda a cada
   pedido.
-- Frete sobre produto pelo método agregado. A média das razões item a item resultaria em 47% a 59% nos mesmos
-  estados, porque itens baratos com frete fixo geram razões muito altas e pesam igual a vendas grandes.
+- Frete sobre produto pelo método agregado. A média das razões item a item resultaria em 55,0% no Maranhão e
+  58,0% em Roraima, porque itens baratos com frete fixo geram razões muito altas e pesam igual a vendas grandes.
 
 ## Fechando com o notebook 02
 

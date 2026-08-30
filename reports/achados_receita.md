@@ -18,9 +18,9 @@ As pontas da base distorcem qualquer cálculo de crescimento. O efeito de escolh
 ## Métricas
 
 - Receita: R$ 15.683.706,74 (R$ 13,45mi produto, R$ 2,23mi frete)
-- Pedidos: 97.905 | Clientes: 93.357 | Vendedores: 3.029
+- Pedidos: 97.905 | Clientes: 94.703 | Vendedores: 3.029
 - Valor do pedido: média R$ 160,19, mediana R$ 105,28, CV 137%
-- Concentração: SP 37,4% | top 5 estados 73,1% | top 5 categorias 39,3% de 72 | top 10 vendedores 12,9% de 3.029
+- Concentração: SP 37,4% | top 5 estados 73,1% | top 5 categorias 39,3% de 73 | top 10 vendedores 12,9% de 3.029
 
 ## Achados
 

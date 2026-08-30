@@ -8,8 +8,6 @@ data/processed/*
 !data/processed/.gitkeep
 !data/processed/README.md
 
-# Saídas temporárias dos notebooks
-output/
 
 # Python
 __pycache__/
