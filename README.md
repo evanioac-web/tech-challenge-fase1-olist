@@ -69,7 +69,6 @@ notebooks/
   03_concentracao_entrega.ipynb concentração geográfica e efeito da entrega
 reports/       achados em markdown, relatório executivo e apresentação
 figures/       gráficos gerados pelos notebooks
-verificacao_numeros.py  confere os números do relatório contra a base original
 ```
 
 Os notebooks rodam na ordem numerada. O `01` grava em `data/processed/`, de onde os outros leem.
@@ -150,10 +149,6 @@ deve coincidir com a origem e nenhuma chave pode ficar órfã. As três verifica
    relativos à própria pasta, então funcionam abrindo direto pelo Jupyter
 
 Cada percentual citado no relatório tem uma célula correspondente que o calcula.
-
-Para conferir tudo de uma vez, sem passar pelos notebooks, rode `python verificacao_numeros.py` na raiz do
-projeto. O script recalcula as 73 afirmações numéricas do relatório direto dos CSVs originais e aponta
-qualquer divergência.
 
 ---
 
