@@ -40,7 +40,7 @@ pergunta que o anterior deixou em aberto.
 A receita cresceu cerca de 628% entre janeiro de 2017 e agosto de 2018, mas esse número descreve o primeiro
 ano. Em 2018 o crescimento para.
 
-O motivo é demanda, não oferta. Entre janeiro e julho de 2018, os dois meses fechados que delimitam o ano na
+Os dados apontam a demanda, não a oferta, como o principal limitador. Entre janeiro e julho de 2018, os dois meses fechados que delimitam o ano na
 base, os vendedores ativos cresceram 28,6% enquanto os clientes caíram 12,9% e o valor por vendedor recuou
 26,6%.
 

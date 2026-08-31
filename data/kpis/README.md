@@ -24,10 +24,10 @@ os status `canceled` e `unavailable`. As métricas de entrega usam adicionalment
 
 | Arquivo | Gerado em | Como | Sustenta no relatório |
 |---|---|---|---|
-| `kpi_evolucao_mensal.csv` | notebook 02, variável `por_mes` | receita e pedidos agrupados por mês | crescimento de 628% e a queda de 4,3% no 2º quadrimestre de 2018 |
+| `kpi_evolucao_mensal.csv` | notebook 02, variável `por_mes` | receita e pedidos agrupados por mês | crescimento de 628% e a queda de 2,6% na média mensal de mai-jul/2018 frente a jan-abr/2018 |
 | `kpi_serie_completa.csv` | notebook 02, variável `todos_meses` | receita por mês em toda a base, sem recorte | justificativa de excluir 2016 |
 | `kpi_novembro_diario.csv` | notebook 02, variável `nov_por_dia` | pedidos únicos por dia em novembro de 2017 | os 1.166 pedidos do dia 24 contra média de 191 |
-| `kpi_vendedores_clientes.csv` | notebook 02, variável `por_mes_detalhe` | contagem de vendedores e clientes distintos por mês | vendedores +30,8%, clientes -10,0%, receita por vendedor -30,8% |
+| `kpi_vendedores_clientes.csv` | notebook 02, variável `por_mes_detalhe` | contagem de vendedores e clientes distintos por mês | jan-vs-jul/2018: vendedores +28,6%, clientes -12,9%, valor transacionado por vendedor -26,6% |
 | `kpi_receita_categoria.csv` | notebook 02, variável `por_categoria` | soma de receita por categoria | 73 categorias, top 5 com 39,3% |
 | `kpi_receita_estado.csv` | notebook 02, variável `por_estado` | soma de receita e pedidos por UF do cliente | SP com 37,4%, top 5 com 73,1% |
 | `kpi_top_sellers.csv` | notebook 02, variável `por_vendedor` | soma de receita por vendedor | 3.029 vendedores, top 10 com 12,9% |
