@@ -27,8 +27,9 @@ As pontas da base distorcem qualquer cálculo de crescimento. O efeito de escolh
 
 ## Achados
 
-1. **O crescimento de 628% descreve 2017, não 2018.** A receita estaciona no último ano da série, e a média
-   mensal recua 2,6% de jan-abr para mai-jul de 2018, comparando apenas meses fechados.
+1. **O crescimento de 628% é do recorte inteiro, não de 2018.** Ele compara o primeiro e o último mês da série.
+   A receita estaciona no último ano, e a média mensal recua 2,6% de jan-abr para mai-jul de 2018, comparando
+   apenas meses fechados.
 
 2. **O limite está na demanda.** Entre janeiro e julho de 2018 os vendedores ativos cresceram 28,6% (968 para
    1.245), os clientes caíram 12,9% (7.088 para 6.172) e o valor por vendedor recuou 26,6% (R$ 1.138 para

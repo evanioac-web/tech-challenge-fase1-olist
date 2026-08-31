@@ -34,8 +34,8 @@ de 6,8% para 8,1%. Adotada a comparação apenas por data.
    renda, mas é a parcela do problema que a empresa controla.
 
 2. **Não é só o tempo, é o custo.** O frete equivale a 13,8% do valor do produto em SP e ultrapassa 26% no
-   Maranhão e em Roraima. Fora dos cinco estados líderes, comprar demora quase o dobro e custa quase o dobro
-   de frete.
+   Maranhão e em Roraima. Fora dos cinco estados líderes, comprar demora quase o dobro, e o frete pesa mais
+   sobre o valor do produto.
 
 3. **Atrasar não é demorar.** Alagoas atrasa 21,5% entregando em 24 dias, enquanto Roraima atrasa 12,5%
    entregando em 29,5. Onde o atraso é alto sem que o tempo seja o pior, o problema está no prazo prometido,

@@ -37,15 +37,16 @@ pergunta que o anterior deixou em aberto.
 
 ## A resposta, em três linhas
 
-A receita cresceu cerca de 628% entre janeiro de 2017 e agosto de 2018, mas esse número descreve o primeiro
-ano. Em 2018 o crescimento para.
+O valor transacionado cresceu cerca de 628% entre o primeiro e o último mês do recorte, janeiro de 2017 a
+agosto de 2018. Mas os meses fechados de 2018 mostram estabilização, não crescimento.
 
 Os dados apontam a demanda, não a oferta, como o principal limitador. Entre janeiro e julho de 2018, os dois meses fechados que delimitam o ano na
 base, os vendedores ativos cresceram 28,6% enquanto os clientes caíram 12,9% e o valor por vendedor recuou
 26,6%.
 
 A demanda não aparece onde a operação é pior. Os cinco estados que concentram 73,1% da receita recebem em 10,5
-dias, os outros 22 esperam 17,3 dias e pagam quase o dobro de frete em proporção ao produto.
+dias, os outros 22 esperam 17,3 dias e pagam mais frete em proporção ao produto, chegando a mais de 26% em
+Maranhão e Roraima.
 
 | Indicador | Resultado |
 |---|---|
