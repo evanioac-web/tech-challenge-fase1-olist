@@ -14,7 +14,6 @@ versionar arquivo grande que pode ser recriado a qualquer momento só polui o hi
 | `dim_clientes.csv` | dimensão de cliente |
 | `dim_produtos.csv` | dimensão de produto, com categoria traduzida |
 | `dim_vendedores.csv` | dimensão de vendedor |
-| `dim_data.csv` | dimensão de data |
 
 Os notebooks `02` e `03` leem daqui. Rodar qualquer um deles sem ter executado o `01` antes resulta em erro
 de arquivo não encontrado.

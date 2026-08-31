@@ -2,6 +2,9 @@
 
 Relatório executivo para investidores, baseado no Brazilian E-Commerce Public Dataset by Olist.
 
+Neste projeto, **valor transacionado** é o preço dos itens somado ao frete. Não é a receita líquida nem a
+comissão da Olist, que a base não informa.
+
 POSTECH Data Analytics
 
 ## Integrantes
@@ -37,24 +40,25 @@ pergunta que o anterior deixou em aberto.
 A receita cresceu cerca de 628% entre janeiro de 2017 e agosto de 2018, mas esse número descreve o primeiro
 ano. Em 2018 o crescimento para.
 
-O motivo é demanda, não oferta. Os vendedores ativos cresceram 30,8% no ano enquanto os clientes caíram 10% e
-a receita por vendedor recuou 30,8%.
+O motivo é demanda, não oferta. Entre janeiro e julho de 2018, os dois meses fechados que delimitam o ano na
+base, os vendedores ativos cresceram 28,6% enquanto os clientes caíram 12,9% e o valor por vendedor recuou
+26,6%.
 
 A demanda não aparece onde a operação é pior. Os cinco estados que concentram 73,1% da receita recebem em 10,5
 dias, os outros 22 esperam 17,3 dias e pagam quase o dobro de frete em proporção ao produto.
 
 | Indicador | Resultado |
 |---|---|
-| Receita (jan/2017 a ago/2018) | R$ 15,68 milhões |
+| Valor transacionado (jan/2017 a ago/2018) | R$ 15,68 milhões |
 | Pedidos | 97.905 |
 | Crescimento no período | cerca de 628% |
-| 2º sobre 1º quadrimestre de 2018 | -4,3% |
+| Jan-abr para mai-jul de 2018 | -2,6% |
 | Valor do pedido (média / mediana) | R$ 160,19 / R$ 105,28 |
 | São Paulo | 37,4% da receita |
 | Cinco maiores estados | 73,1% |
-| Vendedores ativos em 2018 | 968 para 1.266 (+30,8%) |
-| Clientes em 2018 | 7.088 para 6.380 (-10,0%) |
-| Receita por vendedor em 2018 | R$ 1.138 para R$ 787 (-30,8%) |
+| Vendedores ativos (jan a jul/2018) | 968 para 1.245 (+28,6%) |
+| Clientes (jan a jul/2018) | 7.088 para 6.172 (-12,9%) |
+| Valor por vendedor (jan a jul/2018) | R$ 1.138 para R$ 835 (-26,6%) |
 | Projeção do trimestre seguinte | cerca de R$ 1 milhão por mês |
 
 ---
@@ -111,6 +115,13 @@ sem agregar a receita contaria em dobro.
 plausíveis para móvel e eletrônico. Não há preço negativo nem zerado. A assimetria é tratada reportando
 mediana junto com média.
 
+**Agosto de 2018 mantido, mas não usado como ponto de comparação.** A coleta para no dia 29 e os últimos seis
+dias já vêm decaindo, contra 264 pedidos por dia nas três primeiras semanas. Falta perto de um quarto do mês.
+Ele fica no recorte por ter três semanas de venda real, mas as variações de 2018 usam janeiro e julho.
+
+**Meio de pagamento do pedido é o de maior valor**, quando há mais de um. Simplificação registrada, não
+utilizada nas análises desta entrega.
+
 **Recompra medida por `customer_unique_id`**, que identifica a pessoa, e não por `customer_id`, que é gerado a
 cada pedido.
 
@@ -127,12 +138,12 @@ Modelo dimensional com tabela fato no grão de item de pedido:
 fato_itens
   ├── dim_clientes
   ├── dim_produtos
-  ├── dim_vendedores
-  └── dim_data
+  └── dim_vendedores
 ```
 
 A tabela fato é validada após a construção: a contagem de linhas deve permanecer em 112.650, a soma de `price`
-deve coincidir com a origem e nenhuma chave pode ficar órfã. As três verificações constam no notebook 01.
+deve coincidir com a origem e as quatro chaves (`order_id`, `product_id`, `seller_id`, `customer_id`) devem
+existir na tabela de origem. As verificações constam no notebook 01, com a saída salva.
 
 ---
 
