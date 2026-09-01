@@ -21,7 +21,7 @@ POSTECH Data Analytics
 | Repositório com os códigos | este repositório | |
 | Relatório executivo | [`.docx`](reports/relatorio_executivo_olist.docx) | [ler em PDF](reports/relatorio_executivo_olist.pdf) |
 | Apresentação executiva | [`.pptx`](reports/apresentacao_crescimento_receita.pptx) | [ler em PDF](reports/apresentacao_crescimento_receita.pdf) |
-| Vídeo executivo (até 5 min) | _link a incluir_ | |
+| Vídeo executivo (até 5 min) | [assistir no Google Drive](https://drive.google.com/file/d/17FNFWB0d0BKS1Asoxu9EPn0JWRyuhA94/view?usp=sharing) | |
 
 Os PDFs são cópias dos arquivos ao lado, geradas sem edição, para abrir direto no navegador. O GitHub não
 exibe `.docx` nem `.pptx`.
