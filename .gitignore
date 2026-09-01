@@ -21,3 +21,6 @@ venv/
 Thumbs.db
 desktop.ini
 ~$*
+
+# Vídeo executivo fica no Google Drive (ver README), não versionado
+reports/*.mp4
